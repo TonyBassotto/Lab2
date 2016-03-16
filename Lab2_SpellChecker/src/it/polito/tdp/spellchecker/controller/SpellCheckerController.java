@@ -19,7 +19,7 @@ public class SpellCheckerController {
     private URL location;
 
     @FXML
-    private ChoiceBox<?> boxLanguage;
+    private ChoiceBox<String> boxLanguage;
 
     @FXML
     private TextField txtInput;
@@ -59,5 +59,6 @@ public class SpellCheckerController {
         assert btnClearText != null : "fx:id=\"btnClearText\" was not injected: check your FXML file 'SpellChecker.fxml'.";
         assert txtTimeState != null : "fx:id=\"txtTimeState\" was not injected: check your FXML file 'SpellChecker.fxml'.";
 
+        boxLanguage.getItems().addAll("English","Italian");
     }
 }
