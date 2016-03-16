@@ -33,7 +33,7 @@
                   </ChoiceBox>
                </children>
             </HBox>
-            <TextField fx:id="txtInput" accessibleRole="TEXT_AREA" prefHeight="401.0" prefWidth="336.0">
+            <TextField fx:id="txtInput" accessibleRole="TEXT_AREA" alignment="TOP_LEFT" prefHeight="401.0" prefWidth="336.0">
                <VBox.margin>
                   <Insets bottom="7.0" top="7.0" />
                </VBox.margin>

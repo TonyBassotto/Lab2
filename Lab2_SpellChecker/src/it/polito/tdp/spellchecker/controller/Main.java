@@ -11,10 +11,12 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
+			FXMLLoader loader=new FXMLLoader(getClass().getResource("SpellChecker.fxml"));
+			BorderPane root= (BorderPane)loader.load();
 			primaryStage.setResizable(false);
 			//primaryStage.setMinHeight(538);
 			//primaryStage.setMinWidth(700);
-			BorderPane root = (BorderPane)FXMLLoader.load(getClass().getResource("SpellChecker.fxml"));
+			//BorderPane root = (BorderPane)FXMLLoader.load(getClass().getResource("SpellChecker.fxml"));
 			Scene scene = new Scene(root,680,538);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
