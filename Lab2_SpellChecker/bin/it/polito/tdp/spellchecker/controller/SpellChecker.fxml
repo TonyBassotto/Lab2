@@ -10,6 +10,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
 
 
 <BorderPane minHeight="538.0" minWidth="680.0" prefHeight="538.0" prefWidth="680.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.65" fx:controller="it.polito.tdp.spellchecker.controller.SpellCheckerController">
@@ -43,6 +44,7 @@
                   <Button fx:id="btnSpellCheck" mnemonicParsing="false" onAction="#doSpellCheck" text="Spell Check" textAlignment="CENTER" />
                </children>
             </HBox>
+            <TextFlow prefHeight="200.0" prefWidth="200.0" />
             <TextArea fx:id="txtOutput" prefHeight="400.0" prefWidth="336.0">
                <VBox.margin>
                   <Insets bottom="7.0" top="7.0" />

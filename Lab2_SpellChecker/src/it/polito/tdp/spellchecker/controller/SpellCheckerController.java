@@ -7,6 +7,7 @@ import java.util.ResourceBundle;
 
 import it.polito.tdp.spellchecker.model.Dictionary;
 import it.polito.tdp.spellchecker.model.ItalianDictionary;
+import it.polito.tdp.spellchecker.model.RichWord;
 import it.polito.tdp.spellchecker.model.EnglishDictionary;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -20,6 +21,7 @@ public class SpellCheckerController {
 	String text;
 	String type;
 	Dictionary d;
+	List <String> a;
     @FXML
     private ResourceBundle resources;
 
@@ -56,6 +58,7 @@ public class SpellCheckerController {
 
     @FXML
     void doSpellCheck(ActionEvent event) {
+    	txtOutput.setText("");
     	if(txtInput.getText()==null){} else{
     	text=txtInput.getText();
     	if(boxLanguage.getValue()==null){} else {
@@ -72,12 +75,34 @@ public class SpellCheckerController {
     		d.loadDictionary();
     		//a.addAll(id.getDicIT());
     		d.spellCheckText(inputList);
+    		List<RichWord>checkfinale=new LinkedList<RichWord>(d.spellCheckText(inputList));
+    		String res="";
+    		for(RichWord rw:checkfinale){
+    			if(rw.isWrongeIO()==true){
+    				txtOutput.setText(rw.getWrong()+" ");
+    				
+    			}else{
+    				
+    			}
+    		}
+    		
     	}
     	else
-    		{d=new EnglishDictionary();
+    		{
+    		d=new EnglishDictionary();
     		d.loadDictionary();
     		//a.addAll(ed.getDicENG());
     		d.spellCheckText(inputList);
+    		List<RichWord>checkfinale=new LinkedList<RichWord>(d.spellCheckText(inputList));
+    		for(RichWord rw:checkfinale){
+    			if(rw.isWrongeIO()==true){
+    				txtOutput.appendText(rw.getWrong()+" ");
+    				
+    			}else{
+    				
+    			}
+    		}
+    		
     		}
     	}
     	}
